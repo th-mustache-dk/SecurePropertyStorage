@@ -7,7 +7,7 @@ let userDefaultsTagStorage = UserDefaultsStorage(authenticationTag: Data())
 final class UserDefaultTests: XCTestCase {
     @Store(userDefaultsTagStorage, "userDefaultsTagStore") var userDefaultsTagStore: String?
     @Store(UserDefaultsStorage.standard, "userDefaultsStore") var userDefaultsStore: String?
-    @UserDefault("userDefaults") var userDefaults: String?
+    @UserDefaultOptional("userDefaults") var userDefaults: String?
 
     func testUserDefault() {
         userDefaultsStore = nil

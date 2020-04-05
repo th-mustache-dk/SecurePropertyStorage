@@ -7,8 +7,8 @@ let singletonTagStorage: DelegatedStorage = SingletonStorage(authenticationTag: 
 final class SingletonTests: XCTestCase {
     @Store(singletonTagStorage, "singletonTagStore") var singletonTagStore: String?
     @Store(SingletonStorage.standard, "singletonStore") var singletonStore: String?
-    @Singleton("singleton") var singleton: String?
-
+    @SingletonOptional("singleton") var singleton: String?
+    
     func testSingleton() {
         singletonStore = nil
         XCTAssertNil(singletonStore)

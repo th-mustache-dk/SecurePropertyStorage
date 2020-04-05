@@ -7,7 +7,7 @@ let keychainTagStorage: DelegatedStorage = KeychainStorage(authenticationTag: Da
 final class KeychainTests: XCTestCase {
     @Store(keychainTagStorage, "keychainTagStore") var keychainTagStore: String?
     @Store(KeychainStorage.standard, "keychainStore") var keychainStore: String?
-    @Keychain("keychain") var keychain: String?
+    @KeychainOptional("keychain") var keychain: String?
 
     func testKeychainTagStoreError() {
         let keychainStoreError = expectation(description: "keychainTagStoreError")
